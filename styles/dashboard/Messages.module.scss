@@ -1,0 +1,32 @@
+.messageDetails {
+  margin: auto;
+  color: #333;
+  padding: 2rem;
+  .header{
+    display: flex;
+    justify-content: space-between;
+  }
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+  }
+}
+.summary {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+  p {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    margin: 0.4rem 0;
+  }
+
+
+  hr {
+    margin: 0.8rem 0;
+    border: none;
+    border-top: 1px solid #eee;
+  }
+}

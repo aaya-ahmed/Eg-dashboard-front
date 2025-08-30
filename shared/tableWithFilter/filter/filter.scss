@@ -1,0 +1,40 @@
+    .filter-header {
+        position: sticky;
+        padding: 10px 5px;
+        background: $gray-600;
+        width: 100%;
+        top: 0;
+        z-index: 7;
+        display: flex;
+        justify-content: space-between;
+        img{
+            width: 20px;
+            height: 20px;
+        }
+
+    }
+
+    form {
+        background-color:$white;
+    }
+
+    .filter-submit {
+        position: sticky;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background: $white;
+    }
+
+
+.Filter-section {
+    position: fixed;
+    top: 105px;
+    inset-inline-end: 0;
+    height: 77vh;
+    width: 350px;
+    z-index: 4;
+    background: $white;
+    box-shadow: -1px 0px 12px 1px #00000091;
+}

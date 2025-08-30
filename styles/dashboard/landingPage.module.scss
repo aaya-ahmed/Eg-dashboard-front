@@ -1,0 +1,125 @@
+.landing {
+    width: 92%;
+    margin: auto;
+    overflow: visible;
+
+    .accordion-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+
+        .accordion-item {
+            border: 2px solid $gray-600;
+            border-radius: 8px;
+            background-color: $white;
+            box-shadow: 0 2px 4px $black-shadow-color;
+            transition: all 0.3s ease;
+            .accordion-header {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 1.5rem;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                border-radius: 6px;
+
+                &:hover {
+                    background-color: $white;
+                }
+
+                .section-title {
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                    color: $black;
+                    text-align: left;
+                }
+
+                .section-icon {
+                    display: flex;
+                    align-items: center;
+                    color: $black;
+                    transition: transform 0.3s ease;
+
+                    svg {
+                        transition: transform 0.3s ease;
+                    }
+                }
+            }
+
+            .accordion-content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease, padding 0.3s ease;
+                border-top: 1px solid transparent;
+
+                &.expanded {
+                    max-height: 2000px; 
+                    border-top-color: $gray-600;
+                    padding-bottom: 1rem;
+                        overflow-y: auto;
+                }
+
+                .content-wrapper {
+                    padding: 0 1.5rem;
+                    padding-top: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .landing {
+        width: 95%;
+
+        .accordion-container {
+            gap: 0.5rem;
+
+            .accordion-item {
+                .accordion-header {
+                    padding: 0.75rem 1rem;
+
+                    .section-title {
+                        font-size: 1rem;
+                    }
+                }
+
+                .accordion-content {
+                    .content-wrapper {
+                        padding: 0 1rem;
+                        padding-top: 0.75rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 500px) {
+    .landing {
+        width: 98%;
+
+        .accordion-container {
+            .accordion-item {
+                .accordion-header {
+                    padding: 0.5rem 0.75rem;
+
+                    .section-title {
+                        font-size: 0.95rem;
+                    }
+                }
+
+                .accordion-content {
+                    .content-wrapper {
+                        padding: 0 0.75rem;
+                        padding-top: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

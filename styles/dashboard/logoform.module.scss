@@ -1,0 +1,20 @@
+.logo-form {
+    text-align: center;
+    .image {
+        height: 20vh;
+        display: grid;
+        place-items: center;
+
+        .image-label {
+            cursor: pointer;
+
+            img {
+                max-width: 200px;
+                max-height: 200px;
+            }
+        }
+    }
+    .submit-form {
+        padding: 0.3rem 1rem;
+    }
+}
