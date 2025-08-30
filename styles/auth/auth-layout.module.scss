@@ -1,0 +1,44 @@
+
+.main-container {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, $red-color, $yellow);
+
+    .auth-container {
+        width: 400px;
+        border-radius: 20px;
+        box-shadow: -4px -1px 6px 0px #00000073;
+        background-color: $white;
+
+        .auth-background {
+            padding: 40px 0 30px 0;
+            img {
+                display: block;
+                width: 200px;
+                height: 100px;
+                aspect-ratio: 1 / 1;
+                object-fit: fill;
+                bottom: 0;
+                margin: auto;
+            }
+        }
+
+    }
+}
+
+@media(max-width:450px) {
+
+    .main-container {
+        .auth-container {
+            width: 75%;
+            .login-background {
+
+        img {
+          width: 150px;
+          height: 50px;
+        }
+      }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+
+.form-container {
+    height: 100%;
+    background-color: $white;
+        padding: 1rem 0 0 0;
+}
+
+.flex-row-form {
+    width: 100%;
+    padding-top: 3.5rem;
+    padding-inline: 2rem;
+    position: relative;
+    top: -2rem;
+    background-color: $gray-500;
+    height: 100%;
+    border-radius: 10px;
+
+    .input-group {
+        .input-field {
+            width: 45%;
+        }
+    }
+}
+
+.flex-col-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2.5rem;
+    border-radius: 10px;
+
+    position: relative;
+    top: -2rem;
+    background-color: $red-color;
+    height: 100%;
+}
+
+.submit-form {
+    padding: 0.5rem 1rem;
+    align-self: flex-end;
+
+    &[disabled] {
+        background-color: $gray-700 !important;
+    }
+}
+
+.form-add-header {
+    padding: 1rem;
+    width: 95%;
+    margin: auto;
+    background: $green-color;
+    position: relative;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    * {
+
+        color: $white;
+    }
+}
+
+.form-edit-header {
+    padding: 1rem;
+    background: $warning-color;
+    width: 95%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: 0;
+    z-index: 2;
+}
+
+@media(max-width:600px) {
+    .flex-row-form {
+        .input-group {
+            .input-field {
+                width: 100%;
+            }
+        }
+    }
+}

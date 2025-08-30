@@ -1,0 +1,212 @@
+
+
+.input-group {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0.5rem 0;
+
+    &:has(> .input-field:only-child) {
+        >.input-field {
+            width: 100%;
+        }
+    }
+
+    .input-field {
+        width: 48%;
+        margin: 0;
+        position: relative;
+
+
+
+        .input-label-absolute {
+            position: absolute;
+            top: 0.2rem;
+            inset-inline-start: 0.25rem;
+            font-size: 0.9rem;
+            padding: 0.25rem;
+            pointer-events: none;
+            transition: all 0.2s ease;
+        }
+
+        .input-label {
+            color: $gray-800;
+            opacity: 0.7;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.25rem 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            line-height: 2em;
+            font-size: 1rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+            &:focus {
+                outline: none;
+                border-color: $primary-color-hover;
+                box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            }
+
+            &::placeholder {
+                color: $gray-800;
+            }
+        }
+
+        select {
+            padding: 0.75rem;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+
+        .invalid {
+            display: block;
+            color: $error-color;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        &:has(> .input-label-absolute) {
+
+            input,
+            select,
+            textarea {
+
+                padding-top: 1.3rem;
+            }
+        }
+    }
+}
+
+.submit-form {
+    background-color: $success-color;
+    color: white;
+    padding: 0.4rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+
+    width: fit-content;
+    align-self: flex-end;
+
+    &:hover:not(:disabled) {
+        background-color: $gray-800;
+        transform: translateY(-1px);
+    }
+
+    &:disabled {
+        background-color: $gray-800;
+        cursor: not-allowed;
+        transform: none;
+    }
+}
+
+.images-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+
+    .image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+
+        .image-label {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+
+            &:hover {
+                transform: scale(1.02);
+            }
+
+            img {
+                width: 200px;
+                height: 200px;
+                border-radius: 10px;
+                object-fit: cover;
+                border: 3px solid #e5e7eb;
+                transition: border-color 0.2s ease;
+
+                &:hover {
+                    border-color: #3b82f6;
+                }
+            }
+        }
+
+        .image-caption {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #6b7280;
+            text-align: center;
+        }
+    }
+}
+
+
+@media(max-width: 500px) {
+
+    .images-container {
+        flex-direction: column;
+        align-items: center;
+
+        .image {
+            .image-label img {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    }
+}
+
+@media(max-width: 768px) {
+
+    .input-group {
+        flex-direction: column;
+        gap: 0.75rem;
+
+        .input-field {
+            width: 100%;
+        }
+
+        &:has(input[type="number"]) {
+            .input-field {
+                max-width: none;
+            }
+        }
+    }
+
+    .images-container {
+        gap: 1rem;
+
+        .image {
+            .image-label img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    }
+}
