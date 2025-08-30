@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import LandingService from "../../../../../services/landing.service";
 import { useForm, useFieldArray } from "react-hook-form";
-import { Map, MapPin, Phone } from "lucide-react";
+import { Mail, Map, MapPin, Phone } from "lucide-react";
 import { Loader } from "@shared/loader/loader";
 import { useTranslations } from "next-intl";
 import styles from '@styles/dashboard/acheivementform.module.scss'
@@ -14,6 +14,7 @@ type Contact = {
     location: string;
     address: string;
     phone: string;
+    email:string
 };
 
 type ContactForm = {
@@ -116,6 +117,22 @@ export default function ContactUsFormComponent() {
                         )}
                     </div>
 
+                    {/* Email */}
+                    <div className="input-field">
+                        <label className="input-label-absolute">
+                            <Mail size={20} stroke="black" />
+                        </label>
+                        <input
+                            type="text"
+                            placeholder={t("email")}
+                            {...register(`contacts.${index}.email`)}
+                        />
+                        {errors.contacts?.[index]?.email && (
+                            <span className="invalid">
+                                {errors.contacts[index]?.email?.message}
+                            </span>
+                        )}
+                    </div>
                     {/* Location */}
                     <div className="input-field">
                         <label className="input-label-absolute">
@@ -144,7 +161,7 @@ export default function ContactUsFormComponent() {
                         type="button"
                         className="add-btn"
                         onClick={() =>
-                            append({ location: "", address: "", phone: "" })
+                            append({ location: "", address: "", phone: "",email:"" })
                         }
                     >
                         {t("addContact")}
