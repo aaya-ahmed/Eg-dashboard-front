@@ -125,6 +125,7 @@
   },
   "links": {
     "label": "Label",
+    "labelEn":"labelEn",
     "value": "Link",
     "remove": "Remove",
     "add": "Add Link",

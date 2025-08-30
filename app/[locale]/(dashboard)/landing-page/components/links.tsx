@@ -9,6 +9,7 @@ import { useApi } from "@/hooks/request";
 
 type link = {
     label: string;
+    labelEn: string;
     value: string;
 };
 
@@ -87,6 +88,16 @@ export default function LinkFormComponent() {
                             {errors?.links?.[index]?.label?.ref && <span className="invalid">{errors?.links?.[index]?.label?.message}</span>}
                         </div>
                         <div className="input-field">
+                            <label className="input-label-absolute">{t("labelEn")}</label>
+                            <input
+                                type="text"
+                                {...register(`links.${index}.labelEn` as const, {
+                                    required: t("required"),
+                                })}
+                            />
+                            {errors?.links?.[index]?.labelEn?.ref && <span className="invalid">{errors?.links?.[index]?.labelEn?.message}</span>}
+                        </div>
+                        <div className="input-field">
                             <label className="input-label-absolute">{t("value")}</label>
                             <input
                                 type="text"
@@ -97,6 +108,7 @@ export default function LinkFormComponent() {
                             />
                             {errors?.links?.[index]?.value?.ref && <span className="invalid">{errors?.links?.[index]?.value?.message}</span>}
                         </div>
+                        
 
                     </div>
                 );
@@ -105,7 +117,7 @@ export default function LinkFormComponent() {
             <div className="btn-group">
                 <button
                     type="button"
-                    onClick={() => append({ label: "", value: '' })}
+                    onClick={() => append({ label: "", value: '',labelEn:'' })}
                     className="submit-form"
                 >
                     {t("add")}
