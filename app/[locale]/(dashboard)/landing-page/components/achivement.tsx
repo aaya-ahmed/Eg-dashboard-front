@@ -11,6 +11,7 @@ import { useApi } from "@/hooks/request";
 
 type Achievement = {
     label: string;
+    labelEn: string;
     value: number;
     icon?: File | string | null;
     exist?: string | null;
@@ -164,6 +165,13 @@ export default function AchievementForm() {
                             />
                         </div>
                         <div className="input-field">
+                            <label className="input-label-absolute">{t("labelEn")}</label>
+                            <input
+                                type="text"
+                                {...register(`achievements.${index}.labelEn` as const)}
+                            />
+                        </div>
+                        <div className="input-field">
                             <label className="input-label-absolute">{t("value")}</label>
                             <input
                                 type="number"
@@ -182,7 +190,7 @@ export default function AchievementForm() {
             <div className="btn-group">
                 <button
                     type="button"
-                    onClick={() => append({ label: "", value: 0, icon: null })}
+                    onClick={() => append({ label: "", value: 0, icon: null,labelEn:'' })}
                     className="add-btn"
 
                 >

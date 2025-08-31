@@ -85,6 +85,7 @@
   },
   "achievementForm": {
     "label": "العنوان",
+    "labelEn":"العنوان (en)",
     "labelPlaceholder": "أدخل العنوان",
     "value": "القيمة",
     "valuePlaceholder": "أدخل القيمة",
