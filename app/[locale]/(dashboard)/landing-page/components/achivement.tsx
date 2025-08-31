@@ -99,7 +99,7 @@ export default function AchievementForm() {
                 } else {
                     updatedAchievement.push({
                         ...achievement,
-                        icon: ""
+                        icon:achievement.exist
                     });
                 }
                 if (index === data.achievements.length - 1) {

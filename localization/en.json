@@ -85,7 +85,7 @@
   },
   "achievementForm": {
     "label": "Label",
-    "labelEn": "Label",
+    "labelEn": "Label En",
     "labelPlaceholder": "Enter label",
     "value": "Value",
     "valuePlaceholder": "Enter value",
